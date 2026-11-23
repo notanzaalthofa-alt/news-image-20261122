@@ -359,9 +359,9 @@ def draw():
 
 
 def main():
-    out_dir = os.environ["MAKEFUN_OUTPUT_DIR"]
+    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     draw()
-    path = os.path.join(out_dir, "news.png")
+    path = os.path.join(out_dir, "entry.png")
     with open(path, "wb") as f:
         f.write(png_bytes())
 
